@@ -288,13 +288,23 @@ textarea{resize:vertical;min-height:68px;}
 // ══════════════════════════════════════
 //  HIZLI ŞABLONLAR
 // ══════════════════════════════════════
+// Vardiya tipini metne çevir
+function vtipMt(vtip){
+  if(!vtip) return 'vardiyada';
+  if(vtip==='Sabit') return 'Sabit vardiyada';
+  return vtip+'. vardiyada';
+}
+
+// Tutanak sonu
+const ARZ = '\n\nGereğinin yapılmasını arz ederim.';
+
 const SABLONLAR = [
   {
     id:'goreve_gelmemek',
     icon:'🚫', ad:'Göreve Gelmemek', alt:'Md.19',
     turNo:'19',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Sabit vardiyada ${vsaat} saatleri arasında görevli olan güvenlik personeli ${per}'in görevine gelmediği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in görevine gelmediği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -302,7 +312,7 @@ const SABLONLAR = [
     icon:'🏃', ad:'Park Terk', alt:'Md.81',
     turNo:'81',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Parkı ${vtip==='Sabit'?'Sabit vardiyada':vtip+'. vardiyada'} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in görev alanını (parkı) terk ettiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in görev alanını (parkı) terk ettiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -310,7 +320,7 @@ const SABLONLAR = [
     icon:'⏰', ad:'Geç Gelme', alt:'Md.16-17',
     turNo:'16',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Parkı ${vtip==='Sabit'?'Sabit vardiyada':vtip+'. vardiyada'} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in görev yerine geç geldiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in görev yerine geç geldiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -318,7 +328,7 @@ const SABLONLAR = [
     icon:'🏃‍♂️', ad:'Erken Terk', alt:'Md.28',
     turNo:'28',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Parkı ${vtip==='Sabit'?'Sabit vardiyada':vtip+'. vardiyada'} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in izinsiz olarak iş saati bitiminden evvel görev yerini terk ettiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in izinsiz olarak iş saati bitiminden evvel görev yerini terk ettiği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -326,7 +336,7 @@ const SABLONLAR = [
     icon:'👔', ad:'Kıyafet İhlali', alt:'Md.63',
     turNo:'63',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Parkı ${vtip==='Sabit'?'Sabit vardiyada':vtip+'. vardiyada'} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in kendisine teslim edilen kıyafet ve diğer aksesuarları uygun giymediği tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in kendisine teslim edilen kıyafet ve diğer aksesuarları uygun giymediği, takmadığı tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -334,7 +344,7 @@ const SABLONLAR = [
     icon:'📋', ad:'Nöbet Talimatı', alt:'Md.66',
     turNo:'66',
     metin: (t,p,vtip,vsaat,per,kid) =>
-      `${t} Tarihinde ${p} Parkı ${vtip==='Sabit'?'Sabit vardiyada':vtip+'. vardiyada'} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in nöbet talimatlarına uymadığı tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.\n\nGereğinin yapılmasını arz ederim.`,
+      `${t} Tarihinde ${p} Parkı ${vtipMt(vtip)} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in nöbet talimatlarına uymadığı tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.${ARZ}`,
     format:'olay'
   },
   {
@@ -598,7 +608,7 @@ function olustur(){
 
   const [y,m,d]=tarihVal.split('-');
   const t=`${d}.${m}.${y}`;
-  const vtipMt=vtip==='Sabit'?'Sabit vardiyada':`${vtip}. vardiyada`;
+  const vtipMetin=vtipMt(vtip);
 
   let htmlIcerik='';
   const sablon=SABLONLAR.find(s=>s.id===secilenSablon);
@@ -614,7 +624,7 @@ function olustur(){
     // DİSİPLİN CETVELİ — Resmi tutanak
     const madde=CEZA[turNo];
     const ilk=(madde?madde.m.split('\n')[0].replace(/^A\)\s*/,''):'');
-    let metin=`${t} Tarihinde ${park} Parkı ${vtipMt} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in `;
+    let metin=`${t} Tarihinde ${park} Parkı ${vtipMetin} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in `;
     metin+=ilk.charAt(0).toLowerCase()+ilk.slice(1);
     if(!metin.endsWith('.')||metin.endsWith('mak')||metin.endsWith('mek'))
       metin+=' tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.';
@@ -683,24 +693,20 @@ function renderCetvel(filtre){
   const girdi=Object.entries(CEZA).filter(([no,m])=>
     !ql||no.toLowerCase().includes(ql)||m.k.toLowerCase().includes(ql)||m.m.toLowerCase().includes(ql));
 
-  el.innerHTML=`<table style="width:100%;border-collapse:collapse;font-size:13px;">
-    <thead><tr style="background:var(--navy);color:#fff;">
-      <th style="padding:8px 10px;text-align:left;width:55px;">Madde</th>
-      <th style="padding:8px 10px;text-align:left;">Fiil</th>
-      <th style="padding:8px 10px;text-align:center;width:40px;">1.Kez</th>
-      <th style="padding:8px 10px;text-align:center;width:40px;">2.Kez</th>
-      <th style="padding:8px 10px;text-align:center;width:40px;">3.Kez</th>
-      <th style="padding:8px 10px;text-align:center;width:40px;">4.Kez</th>
-      <th style="padding:8px 10px;text-align:center;width:40px;">5.Kez</th>
-    </tr></thead>
-    <tbody>${girdi.map(([no,m],i)=>`
-      <tr style="background:${i%2?'#f8f9fd':'#fff'};border-bottom:1px solid #e8eaf0;" onclick="cetvelSec('${no}')" style="cursor:pointer;">
-        <td style="padding:8px 10px;font-weight:700;color:var(--navy);">${no}</td>
-        <td style="padding:8px 10px;">${m.k}</td>
-        ${m.c.map(c=>`<td style="padding:8px 10px;text-align:center;font-size:11px;font-weight:700;color:${c?'var(--red)':'#ccc'}">${c||'—'}</td>`).join('')}
-      </tr>`).join('')}
-    </tbody>
-  </table>`;
+  const kezLabels=['1.Kez','2.Kez','3.Kez','4.Kez','5.Kez'];
+
+  el.innerHTML=girdi.map(([no,m],i)=>{
+    const cezalar=m.c.map((c,idx)=>c?`<span style="display:inline-flex;align-items:center;gap:3px;background:#fff3e0;border:1px solid #ffc966;border-radius:12px;padding:2px 8px;font-size:11px;font-weight:700;color:#b35a00;margin:2px;"><span style="color:#999;font-weight:400;font-size:10px;">${kezLabels[idx]}:</span> ${c}</span>`:'').filter(Boolean).join('');
+    return `<div onclick="cetvelSec('${no}')" style="background:${i%2?'#f8f9fd':'#fff'};border-bottom:1px solid #e8eaf0;padding:12px 14px;cursor:pointer;transition:background .15s;" onmouseover="this.style.background='#eef1ff'" onmouseout="this.style.background='${i%2?'#f8f9fd':'#fff'}'">
+      <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;">
+        <span style="flex-shrink:0;background:var(--navy);color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:2px 8px;margin-top:1px;">Md.${no}</span>
+        <span style="font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;">${m.k}</span>
+      </div>
+      <div style="padding-left:4px;">${cezalar||'<span style="font-size:11px;color:#999;">Ceza bilgisi yok</span>'}</div>
+    </div>`;
+  }).join('');
+
+  if(!girdi.length) el.innerHTML='<div style="text-align:center;padding:40px;color:#999;">Sonuç bulunamadı</div>';
 }
 function cetvelAra(q){ renderCetvel(q); }
 function cetvelSec(no){
