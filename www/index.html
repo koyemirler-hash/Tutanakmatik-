@@ -6,7 +6,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Tutanakmatik</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a2744'/%3E%3Crect x='25' y='15' width='50' height='70' rx='4' fill='white'/%3E%3Crect x='32' y='28' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='38' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='48' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='58' width='24' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='20' y='10' width='30' height='12' rx='3' fill='%23c9a84c'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a2744'/%3E%3Crect x='25' y='15' width='50' height='70' rx='4' fill='white'/%3E%3Crect x='32' y='28' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='38' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='48' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='58' width='24' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='20' y='10' width='30' height='12' rx='3' fill='%23c9a84c'/%3E%3C/svg%3E">
+
 <style>
 :root{--navy:#1a2744;--navy2:#243259;--gold:#c9a84c;--goldf:#e8c97a;--bg:#f0f2f7;--border:#d0d6e8;--red:#c0392b;--green:#27ae60;}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -237,7 +239,7 @@ textarea{resize:vertical;min-height:68px;}
         <div id="preview"></div>
         <div class="fa" style="margin-top:16px;">
           <button class="btn btn-out" onclick="window.print()">🖨️ Yazdır</button>
-          <button class="btn btn-gold" onclick="pdfAl()">⬇️ PDF İndir</button>
+          <button class="btn btn-gold" onclick="pdfAl()">🖨️ Yazdır / PDF</button>
         </div>
       </div>
     </div>
@@ -662,26 +664,30 @@ function olustur(){
 function pdfAl(){
   const el=document.getElementById('preview');
   if(!el||!el.innerHTML.trim()){toast('Önce tutanak oluşturun!',false);return;}
-  const d=window._pdfData||{};
-  const tarih=(d.tarih||'').replace(/-/g,'');
-  const per=(d.per||'personel').replace(/\s+/g,'_');
-  const opt={
-    margin:[15,15,15,15],
-    filename:`Tutanak_${per}_${tarih}.pdf`,
-    image:{type:'jpeg',quality:0.98},
-    html2canvas:{scale:2,useCORS:true,logging:false,backgroundColor:'#ffffff'},
-    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
-  };
-  toast('📄 PDF hazırlanıyor...',true);
-  // Klonu geçici olarak body'e ekle, html2pdf uygula
-  const klon=document.createElement('div');
-  klon.style.cssText='width:170mm;padding:10mm;font-family:Times New Roman,serif;color:#111;line-height:1.9;background:#fff;';
-  klon.innerHTML=el.innerHTML;
-  document.body.appendChild(klon);
-  html2pdf().set(opt).from(klon).save().then(()=>{
-    document.body.removeChild(klon);
-    toast('✅ PDF indirildi!',true);
-  });
+  // Yazdır diyaloğu aç - APK'da da çalışır
+  const w=window.open('','_blank','width=800,height=600');
+  if(!w){window.print();return;}
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
+    <title>Tutanak</title>
+    <style>
+      body{font-family:'Times New Roman',Georgia,serif;color:#111;line-height:1.9;padding:20mm 15mm;margin:0;}
+      .oy-yer{font-size:13px;font-weight:700;margin-bottom:14px;}
+      .oy-txt{font-size:14px;line-height:2.1;text-align:justify;}
+      .tk{text-align:center;margin-bottom:6px;}
+      .ku{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+      .ka{font-size:11px;color:#555;margin-top:2px;}
+      .thr1{border:none;border-top:2px solid #1a2744;margin:9px 0 3px;}
+      .thr2{border:none;border-top:1px solid #aaa;margin:3px 0 14px;}
+      .tb2{text-align:center;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;color:#1a2744;}
+      .tm{display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;}
+      .txt{font-size:14px;text-align:justify;margin-bottom:24px;line-height:2.05;}
+      .timz{margin-top:28px;font-size:13px;text-align:right;color:#444;font-style:italic;}
+      @media print{@page{margin:15mm;}}
+    </style>
+  </head><body>${el.innerHTML}</body></html>`);
+  w.document.close();
+  setTimeout(()=>{w.print();},400);
+  toast('🖨️ Yazdır/PDF penceresi açıldı',true);
 }
 
 // ══════════════════════════════════════
