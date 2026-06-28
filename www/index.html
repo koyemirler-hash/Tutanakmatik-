@@ -6,8 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Tutanakmatik</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a2744'/%3E%3Crect x='25' y='15' width='50' height='70' rx='4' fill='white'/%3E%3Crect x='32' y='28' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='38' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='48' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='58' width='24' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='20' y='10' width='30' height='12' rx='3' fill='%23c9a84c'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a2744'/%3E%3Crect x='25' y='15' width='50' height='70' rx='4' fill='white'/%3E%3Crect x='32' y='28' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='38' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='48' width='36' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='32' y='58' width='24' height='4' rx='2' fill='%231a2744'/%3E%3Crect x='20' y='10' width='30' height='12' rx='3' fill='%23c9a84c'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231a2744'/%3E%3Ccircle cx='50' cy='38' r='18' fill='none' stroke='%23c9a84c' stroke-width='5'/%3E%3Cline x1='50' y1='38' x2='50' y2='26' stroke='%23c9a84c' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='50' y1='38' x2='58' y2='38' stroke='%23e8c97a' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='22' y='63' width='56' height='5' rx='2.5' fill='%23c9a84c'/%3E%3Crect x='22' y='75' width='40' height='5' rx='2.5' fill='rgba(201,168,76,0.5)'/%3E%3C/svg%3E">
 
 <style>
 :root{--navy:#1a2744;--navy2:#243259;--gold:#c9a84c;--goldf:#e8c97a;--bg:#f0f2f7;--border:#d0d6e8;--red:#c0392b;--green:#27ae60;}
@@ -17,7 +16,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--navy);mi
 /* HEADER */
 .hdr{background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 4px 20px rgba(26,39,68,.3);}
 .hdr-in{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px;}
-.hdr-logo{width:44px;height:44px;background:var(--gold);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.hdr-logo{width:44px;height:44px;flex-shrink:0;}
 .hdr-title h1{font-size:20px;font-weight:800;color:#fff;letter-spacing:1px;}
 .hdr-title p{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px;}
 .tabs{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);}
@@ -53,6 +52,7 @@ input,select,textarea{border:2px solid var(--border);border-radius:8px;padding:9
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);background:#fff;}
 textarea{resize:vertical;min-height:68px;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 
 /* ARAMA DROPDOWN */
 .tur-wrap{position:relative;}
@@ -83,22 +83,23 @@ textarea{resize:vertical;min-height:68px;}
 .btn-out{background:transparent;color:var(--navy);border:2px solid var(--border);}
 .btn-out:hover{border-color:var(--navy);background:var(--bg);}
 
-/* ÖNIZLEME */
+/* ÖNİZLEME */
 .prev-wrap{display:none;}.prev-wrap.on{display:block;}
 #preview{background:#fff;border:1px solid var(--border);border-radius:10px;padding:36px 44px;font-family:'Times New Roman',Georgia,serif;color:#111;line-height:1.9;box-shadow:0 2px 18px rgba(0,0,0,.06);}
-.tk{text-align:center;margin-bottom:6px;}
+.tk{text-align:center;margin-bottom:4px;}
 .tk .ku{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 .tk .ka{font-size:11px;color:#555;margin-top:2px;}
+.tk .bolge-ad{font-size:12px;font-weight:700;color:#222;margin-top:3px;letter-spacing:.5px;}
+.tk .park-ad{font-size:12px;color:#333;margin-top:1px;}
 .thr1{border:none;border-top:2px solid #1a2744;margin:9px 0 3px;}
 .thr2{border:none;border-top:1px solid #aaa;margin:3px 0 14px;}
-.tb2{text-align:center;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;color:#1a2744;}
+.tb2{text-align:center;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;color:#1a2744;}
+.konu-sat{text-align:center;font-size:13px;margin-bottom:16px;color:#222;}
 .tm{display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;}
 .tm span{color:#555;}.tm strong{color:#111;}
-.txt{font-size:14px;text-align:justify;margin-bottom:24px;line-height:2.05;}
+.txt{font-size:14px;text-align:justify;margin-bottom:24px;line-height:2.1;}
 .timz{margin-top:28px;font-size:13px;text-align:right;color:#444;font-style:italic;}
-/* Olay Yeri şablonu */
-.oy-yer{font-size:13px;font-weight:700;margin-bottom:14px;}
-.oy-txt{font-size:14px;line-height:2.1;text-align:justify;}
+.bilgi-sat{text-align:right;font-size:13px;margin-top:20px;font-style:italic;}
 
 /* AYARLAR */
 .ss{margin-bottom:22px;}
@@ -110,6 +111,13 @@ textarea{resize:vertical;min-height:68px;}
 .add-row input{flex:1;}
 .btn-add{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:9px 13px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
 
+/* BÖLGE KART */
+.bolge-kart{border:2px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;background:#fafbfd;}
+.bolge-kart .bk-baslik{font-size:13px;font-weight:700;color:var(--navy);display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.bolge-kart .bk-park-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.bolge-kart .bk-park-ekle{display:flex;gap:6px;}
+.bk-park-ekle input{flex:1;font-size:13px;}
+
 /* TOAST */
 .toast{position:fixed;bottom:20px;right:20px;padding:10px 16px;border-radius:9px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);transform:translateY(60px);opacity:0;transition:all .3s;z-index:1000;color:#fff;}
 .toast.on{transform:translateY(0);opacity:1;}
@@ -118,6 +126,7 @@ textarea{resize:vertical;min-height:68px;}
 
 @media(max-width:580px){
   .grid2{grid-template-columns:1fr;}
+  .grid3{grid-template-columns:1fr 1fr;}
   #preview{padding:20px 16px;}
   .tm{flex-direction:column;gap:3px;}
   .main{padding:12px;}
@@ -134,7 +143,15 @@ textarea{resize:vertical;min-height:68px;}
 
 <div class="hdr">
   <div class="hdr-in">
-    <div class="hdr-logo">📋</div>
+    <svg class="hdr-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="18" fill="#1a2744"/>
+      <circle cx="50" cy="38" r="18" fill="none" stroke="#c9a84c" stroke-width="5"/>
+      <line x1="50" y1="38" x2="50" y2="26" stroke="#c9a84c" stroke-width="4" stroke-linecap="round"/>
+      <line x1="50" y1="38" x2="59" y2="38" stroke="#e8c97a" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="50" cy="38" r="3" fill="#e8c97a"/>
+      <rect x="22" y="64" width="56" height="5" rx="2.5" fill="#c9a84c"/>
+      <rect x="22" y="76" width="38" height="5" rx="2.5" fill="rgba(201,168,76,0.45)"/>
+    </svg>
     <div class="hdr-title">
       <h1>TUTANAKMAT<span style="color:var(--gold)">İ</span>K</h1>
       <p>Güvenlik Tutanak Yönetim Sistemi</p>
@@ -173,9 +190,34 @@ textarea{resize:vertical;min-height:68px;}
           <input type="date" id="tarih" readonly>
         </div>
         <div class="fg">
-          <label>🌳 Park</label>
-          <select id="park"><option value="">— Seçiniz —</option></select>
+          <label>🕐 Olay Saati</label>
+          <input type="time" id="olaysaati" inputmode="numeric">
         </div>
+      </div>
+
+      <div class="grid2" style="margin-bottom:0;">
+        <div class="fg">
+          <label>🏢 Güvenlik Müdürlüğü</label>
+          <select id="mudurlu" onchange="mudurluDegis()"><option value="">— Seçiniz —</option></select>
+        </div>
+        <div class="fg">
+          <label>📍 Bölge</label>
+          <select id="bolge" onchange="bolgeDegis()"><option value="">— Önce Müdürlük —</option></select>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="fg">
+          <label>🌳 Park / Alan</label>
+          <select id="park"><option value="">— Önce Bölge —</option></select>
+        </div>
+        <div class="fg">
+          <label>📌 Özel Konum (İsteğe Bağlı)</label>
+          <input type="text" id="konum" placeholder="Örn: 2. Etap oyuncaklar bölgesi" inputmode="text">
+        </div>
+      </div>
+
+      <div class="grid2">
         <div class="fg">
           <label>🕐 Vardiya Tipi</label>
           <select id="vtip" onchange="vtipDegis()">
@@ -193,7 +235,7 @@ textarea{resize:vertical;min-height:68px;}
         </div>
         <div class="fg">
           <label>👤 Personel Adı Soyadı</label>
-          <input type="text" id="personel" placeholder="Ad Soyad">
+          <input type="text" id="personel" placeholder="Ad Soyad" inputmode="text" autocomplete="name">
         </div>
         <div class="fg">
           <label>🎖️ Kıdem / Unvan</label>
@@ -206,7 +248,7 @@ textarea{resize:vertical;min-height:68px;}
         <label>🏛️ Tutanak Türü — Disiplin Ceza Cetveli</label>
         <div class="tur-wrap">
           <input type="text" id="tur-ara" placeholder="🔍 Madde ara... (örn: göreve gelme, park terk, 81)"
-            oninput="turAra(this.value)" onfocus="turAc()" autocomplete="off">
+            oninput="turAra(this.value)" onfocus="turAc()" autocomplete="off" inputmode="text">
           <input type="hidden" id="tur-no" value="">
           <div id="tur-dd"></div>
         </div>
@@ -220,8 +262,13 @@ textarea{resize:vertical;min-height:68px;}
       </div>
 
       <div class="fg" style="margin-top:4px;">
+        <label>📝 Konu Başlığı (İsteğe Bağlı)</label>
+        <input type="text" id="konubaslik" placeholder="Örn: Basketbol sahasının telçitleri hk." inputmode="text">
+      </div>
+
+      <div class="fg">
         <label>📝 Ek Açıklama (İsteğe Bağlı)</label>
-        <textarea id="aciklama" placeholder="Varsa ek bilgi..."></textarea>
+        <textarea id="aciklama" placeholder="Varsa ek detaylar..." inputmode="text"></textarea>
       </div>
 
       <div class="fa">
@@ -252,7 +299,7 @@ textarea{resize:vertical;min-height:68px;}
   <div class="card">
     <div class="ch"><h2>DİSİPLİN CEZA CETVELİ</h2><span class="bdg">89 MADDE</span></div>
     <div class="cb">
-      <input type="text" placeholder="🔍 Madde ara..." oninput="cetvelAra(this.value)" style="margin-bottom:14px;">
+      <input type="text" placeholder="🔍 Madde ara..." oninput="cetvelAra(this.value)" style="margin-bottom:14px;" inputmode="text">
       <div id="cetveltablo"></div>
     </div>
   </div>
@@ -264,16 +311,21 @@ textarea{resize:vertical;min-height:68px;}
     <div class="ch"><h2>AYARLAR</h2><span class="bdg">YÖNETİM</span></div>
     <div class="cb">
 
+      <!-- BÖLGE YÖNETİMİ -->
       <div class="ss">
-        <h3>🌳 Park Listesi</h3>
-        <div class="tags" id="park-tags"></div>
-        <div class="add-row"><input type="text" id="yp" placeholder="Yeni park..."><button class="btn-add" onclick="ekle('park')">+ Ekle</button></div>
+        <h3>🏢 Güvenlik Müdürlükleri ve Bölgeler</h3>
+        <p style="font-size:12px;color:#5a6480;margin-bottom:12px;">Müdürlük ekleyin, her müdürlüğe bölge ve park ekleyin.</p>
+        <div id="mudurlu-blok"></div>
+        <div class="add-row" style="margin-top:10px;">
+          <input type="text" id="yeni-mudurlu" placeholder="Yeni Güvenlik Müdürlüğü..." inputmode="text">
+          <button class="btn-add" onclick="mudurluEkle()">+ Müdürlük Ekle</button>
+        </div>
       </div>
 
       <div class="ss">
         <h3>🎖️ Kıdem Listesi</h3>
         <div class="tags" id="kidem-tags"></div>
-        <div class="add-row"><input type="text" id="yk" placeholder="Yeni kıdem..."><button class="btn-add" onclick="ekle('kidem')">+ Ekle</button></div>
+        <div class="add-row"><input type="text" id="yk" placeholder="Yeni kıdem..." inputmode="text"><button class="btn-add" onclick="ekle('kidem')">+ Ekle</button></div>
       </div>
 
       <div id="vard-ayar-bolum"></div>
@@ -290,15 +342,13 @@ textarea{resize:vertical;min-height:68px;}
 // ══════════════════════════════════════
 //  HIZLI ŞABLONLAR
 // ══════════════════════════════════════
-// Vardiya tipini metne çevir
 function vtipMt(vtip){
   if(!vtip) return 'vardiyada';
   if(vtip==='Sabit') return 'Sabit vardiyada';
-  return vtip+'. vardiyada';
+  return vtip+'. vardiyasında';
 }
 
-// Tutanak sonu
-const ARZ = '\n\nGereğinin yapılmasını arz ederim.';
+const ARZ = '\n\nBilginize Müdürüm.';
 
 const SABLONLAR = [
   {
@@ -350,6 +400,12 @@ const SABLONLAR = [
     format:'olay'
   },
   {
+    id:'serbest',
+    icon:'📝', ad:'Serbest Tutanak', alt:'Özel yazım',
+    turNo:'',
+    format:'serbest'
+  },
+  {
     id:'disiplin',
     icon:'📑', ad:'Disiplin Cetveli', alt:'89 madde',
     turNo:'',
@@ -363,111 +419,121 @@ const SABLONLAR = [
 const CEZA = {
   "1":  {k:"Sürücü belgesi iptali bildirmemek",c:["4G","İ.Ç.","","",""],m:"Şirkete ait araçlarda görev yapan ÖGG'lerin sürücü belgesinin herhangi bir sebeple geçici yada kalıcı olarak iptal edilmesi durumunda sıralı sicil amirine bilgi vermemesi"},
   "2":  {k:"Vardiya devir-teslime katılmamak",c:["i","","","",""],m:"Vardiya devir-teslim saatlerinde nöbet bölgesinde devir teslime katılmamak"},
-  "3":  {k:"Resmi üniforma ile sosyal medya paylaşımı",c:["2G","3G","4G","",""],m:"İş saatleri içerisinde ve iş saatleri sonrasında resmi üniforma ile sosyal medya üzerinden uygunsuz paylaşımlarda bulunmak (KVKK kanunu kapsamı dışında)"},
+  "3":  {k:"Resmi üniforma ile sosyal medya paylaşımı",c:["2G","3G","4G","",""],m:"İş saatleri içerisinde ve iş saatleri sonrasında resmi üniforma ile sosyal medya üzerinden uygunsuz paylaşımlarda bulunmak"},
   "4":  {k:"İstirahat saatinde uygunsuz davranış",c:["3G","5G","İ.Ç.","",""],m:"İstirahat saatleri dışında görev alanında uygunsuz şekilde yemek yemek, sigara içmek v.b. davranışlarda bulunmak"},
   "5":  {k:"Eksik ekipmanla göreve çıkmak",c:["1G","2G","3G","",""],m:"ATV, bot, tekne, scooter ve araç sürücülerinin eksik ekipman ile göreve çıkması"},
   "6":  {k:"Emanet buluntuların kaybolmasına sebebiyet",c:["4G","İ.Ç.","","",""],m:"Emanete alınan buluntuların çalınmasına, yitirilmesine ve zarar görmesine sebebiyet verilmesi"},
   "7":  {k:"Aracı izinsiz kullandırmak",c:["2G","4G","İ.Ç.","",""],m:"Şirkete ait araçların görev tanımı uygun olmayan kişilere idareden izin almaksızın kullandırılması"},
   "8":  {k:"Demirbaşları 3. şahıslara vermek/satmak",c:["4G","İ.Ç.","","",""],m:"Şirkete ait demirbaşların 3. şahıslara verilmesi, satılması"},
-  "9":  {k:"Alkol/uyuşturucu/kumar/fuhuş",c:["İ.Ç.","","","",""],m:"A) İş yerinde alkol ürünleri kullanmak, uyuşturucu madde kullanmak, kumar oynamak, fuhuş yapmak ve yapılmasına göz yummak\nB) Göreve alkollü gelmek: 5G İ.Ç."},
-  "10": {k:"Eksik teçhizat/ekipmanla bulunmak",c:["i","1G","2G","3G",""],m:"Görevde eksik teçhizat ve ekipmanla bulunmak (kalem, not defteri, düdük, el feneri v.b.)"},
+  "9":  {k:"Alkol/uyuşturucu/kumar/fuhuş",c:["İ.Ç.","","","",""],m:"A) İş yerinde alkol ürünleri kullanmak, uyuşturucu madde kullanmak, kumar oynamak, fuhuş yapmak ve yapılmasına göz yummak"},
+  "10": {k:"Eksik teçhizat/ekipmanla bulunmak",c:["i","1G","2G","3G",""],m:"Görevde eksik teçhizat ve ekipmanla bulunmak"},
   "11": {k:"Talimatlara uymamak/disiplinsiz davranmak",c:["","1G","2G","3G",""],m:"Resmi görev alacak personelin görev esnasında üstleri tarafından verilen talimatlara uymayarak disiplinsiz davranışlar sergilemesi"},
-  "12": {k:"Resmi evrakları zamanında bildirmemek",c:["1G","2G","3G","",""],m:"Rapor, hastane yatış, izin ya da benzeri resmi evrakların gününde dahi alınmış olsa zamanında sıralı sicil amirlerine ve ilgililerine bildirilmemesi"},
-  "13": {k:"Asılsız/hakaretamiz bilgi ve belge paylaşımı",c:["6G","İ.Ç.","","",""],m:"İş arkadaşları hakkında asılsız, olumsuz, hakaretamiz, küçük düşürücü sözlü ve/veya yazılı bilgi ve belge paylaşımında bulunulduğunun tespit edildiğinde"},
-  "14": {k:"Sosyal medyada amirlere hakaret",c:["İ.Ç.","","","",""],m:"Sosyal medya (Instagram, Facebook, WhatsApp, TikTok, Twitter v.b.) üzerinden şirket yöneticileri, sıralı sicil amirleri ve iş arkadaşları hakkında asılsız, olumsuz, hakaret netliğinde ve küçük düşürücü yazı ve paylaşımda bulunulduğunun tespiti durumunda"},
+  "12": {k:"Resmi evrakları zamanında bildirmemek",c:["1G","2G","3G","",""],m:"Rapor, hastane yatış, izin ya da benzeri resmi evrakların zamanında sıralı sicil amirlerine bildirilmemesi"},
+  "13": {k:"Asılsız/hakaretamiz bilgi ve belge paylaşımı",c:["6G","İ.Ç.","","",""],m:"İş arkadaşları hakkında asılsız, olumsuz, hakaretamiz bilgi ve belge paylaşımında bulunmak"},
+  "14": {k:"Sosyal medyada amirlere hakaret",c:["İ.Ç.","","","",""],m:"Sosyal medya üzerinden şirket yöneticileri ve amirleri hakkında asılsız, hakaretamiz paylaşımda bulunmak"},
   "15": {k:"Şirket içi yazışmaları 3. şahıslarla paylaşmak",c:["İ.Ç.","","","",""],m:"Sosyal medya üzerinden şirket içi yazışma, bilgi ve belgeleri 3. şahıslarla paylaşmak"},
   "16": {k:"1 saate kadar geç gelmek",c:["1G","2G","3G","",""],m:"(1) Bir saate kadar geç gelmek"},
   "17": {k:"1 saati aşan süre ile geç gelmek",c:["i","1G","2G","3G",""],m:"(1) Bir saati aşan süre ile geç gelmek"},
-  "18": {k:"Geç gelmeyi alışkanlık haline getirmek",c:["3G","4G","İ.Ç.","",""],m:"Devamlı geç gelmeyi alışkanlık haline getirmek (6ay içerisinde geç gelme disiplin cezalarının herhangi birinden 3 defa işleme tabi olmak)"},
+  "18": {k:"Geç gelmeyi alışkanlık haline getirmek",c:["3G","4G","İ.Ç.","",""],m:"Devamlı geç gelmeyi alışkanlık haline getirmek"},
   "19": {k:"Mazeretsiz 1 gün göreve gelmemek",c:["2G","3G","4G","",""],m:"Öncesinde mazeret belirtmeksizin (1) bir gün göreve gelmemek"},
   "20": {k:"Üst üste 2 gün göreve gelmemek",c:["3G","4G","","",""],m:"Üstüste (2) iki gün göreve gelmemek"},
   "21": {k:"Üst üste 3 gün göreve gelmemek",c:["4G","","","",""],m:"Üst üste (3) üç gün göreve gelmemek"},
-  "22": {k:"Verilen görevi yapmamak veya yetersiz yapmak",c:["4G","İ.Ç.","","",""],m:"Verilen görevi, yapmamak veya görevi yetersiz yapmak"},
+  "22": {k:"Verilen görevi yapmamak veya yetersiz yapmak",c:["4G","İ.Ç.","","",""],m:"Verilen görevi yapmamak veya görevi yetersiz yapmak"},
   "23": {k:"Yazılı emre rağmen görevi yapmamak",c:["4G","İ.Ç.","","",""],m:"Yazılı emre rağmen verilen görevi yapmamakta ısrar etmek"},
   "24": {k:"Kontrol esnasında yalan beyanda bulunmak",c:["2G","3G","4G","",""],m:"Kontrol ve denetim esnasında yalan beyanda bulunmak"},
-  "25": {k:"Kontrol ve denetimi engellemek",c:["1G","2G","3G","",""],m:"Kontrol ve denetimi engellemeye yönelik tavır, hal ve davranışlarda bulunmak, kontrol ve denetimi engelleyecek önlem ve düzenek kurmak"},
+  "25": {k:"Kontrol ve denetimi engellemek",c:["1G","2G","3G","",""],m:"Kontrol ve denetimi engellemeye yönelik tavır ve davranışlarda bulunmak"},
   "26": {k:"Görev saatinde özel işlerle ilgilenmek",c:["1G","2G","3G","",""],m:"Görev saatinde özel işleriyle ilgilenmek"},
-  "27": {k:"Disiplinsiz davranmak/iş güvenliğini bozmak",c:["3G","İ.Ç.","","",""],m:"Disiplinsiz davranmak, iş sağlığı ve güvenliği kurallarına uymamak, iş verimini aksatmak ve iş barışını bozmak"},
+  "27": {k:"Disiplinsiz davranmak/iş güvenliğini bozmak",c:["3G","İ.Ç.","","",""],m:"Disiplinsiz davranmak, iş sağlığı ve güvenliği kurallarına uymamak"},
   "28": {k:"İzinsiz erken görev yeri terk etmek",c:["1G","2G","3G","",""],m:"İzinsiz olarak iş saati bitiminden evvel görev yerini terk etmek"},
-  "29": {k:"Erken terk etmeyi alışkanlık haline getirmek",c:["2G","3G","İ.Ç.","",""],m:"İzinsiz olarak iş saati bitiminden evvel görev yerini terk etmeyi alışkanlık haline getirmek (6ay içerisinde 3 defa tekrarlanması)"},
+  "29": {k:"Erken terk etmeyi alışkanlık haline getirmek",c:["2G","3G","İ.Ç.","",""],m:"İzinsiz olarak iş saati bitiminden evvel görev yerini terk etmeyi alışkanlık haline getirmek"},
   "30": {k:"Gereksiz yere arkadaşları meşgul etmek",c:["i","1G","2G","",""],m:"İş saatlerinde gereksiz yere arkadaşlarını meşgul etmek"},
   "31": {k:"İş saatinde talimatlara uymamak",c:["2G","4G","İ.Ç.","",""],m:"İş başında, iş saatlerinde talimatlara uymamak"},
   "32": {k:"İş arkadaşıyla kavga etmek/küfür ve hakaret",c:["2G","4G","İ.Ç.","",""],m:"İş yerinde iş arkadaşı ile kavga etmek, küfür ve hakaretlerde bulunmak"},
   "33": {k:"Günlük devam çizelgesini imzalamamak",c:["2G","4G","İ.Ç.","",""],m:"Günlük devam çizelgesini imzalamamak"},
   "34": {k:"İmzalamamayı alışkanlık haline getirmek",c:["2G","4G","6G","",""],m:"İmza çizelgesini imzalamayı alışkanlık haline getirmek"},
-  "35": {k:"Kıyafet/makyaj yönetmeliğine uymamak",c:["1G","2G","3G","",""],m:"Kadın personelin görev esnasında resmi kıyafete uygun olmayacak abartılı şekilde makyaj yapması ve saçlarını toplamaması"},
+  "35": {k:"Kıyafet/makyaj yönetmeliğine uymamak",c:["1G","2G","3G","",""],m:"Kadın personelin görev esnasında resmi kıyafete uygun olmayacak abartılı makyaj yapması ve saçlarını toplamaması"},
   "36": {k:"Amirlere/arkadaşlara küfür, hakaret, sözlü saldırı",c:["4G","İ.Ç.","","",""],m:"Amirlerine ve iş arkadaşlarına karşı küfür, hakaret ve sözlü saldırıda bulunmak"},
-  "37": {k:"Amirlere/arkadaşlara fiziksel saldırı",c:["6G","İ.Ç.","","",""],m:"Amirlerine ve iş arkadaşlarına karşı fiziksel saldırıda bulunmak, ilk fiziksel saldırıyı başlatan"},
-  "38": {k:"Yardımcı olmamayı alışkanlık haline getirmek",c:["i","2G","4G","6G",""],m:"Gerektiği halde iş arkadaşlarına görevi ile ilgili yardımcı olmamak ve yardımcı olmamayı alışkanlık haline getirmek"},
+  "37": {k:"Amirlere/arkadaşlara fiziksel saldırı",c:["6G","İ.Ç.","","",""],m:"Amirlerine ve iş arkadaşlarına karşı fiziksel saldırıda bulunmak"},
+  "38": {k:"Yardımcı olmamayı alışkanlık haline getirmek",c:["i","2G","4G","6G",""],m:"Gerektiği halde iş arkadaşlarına yardımcı olmamak ve bunu alışkanlık haline getirmek"},
   "39": {k:"Kasten yangına sebebiyet vermek",c:["İ.Ç.","","","",""],m:"Kasten yangına sebebiyet vermek"},
   "40": {k:"İş yerine sabotaj yapmak",c:["İ.Ç.","","","",""],m:"İş yerine sabotaj yapmak"},
   "41": {k:"Araç ve gereçlere özen göstermemek/hor kullanmak",c:["i","1G","2G","3G",""],m:"Yönetimdeki araç ve gereçlerin bakımı ve temizliğine özen göstermemek ve hor kullanmak"},
-  "42": {k:"Bozuklukları zamanında bildirmemek",c:["i","1G","2G","3G",""],m:"Araç ve gereçleri kontrol etmeden göreve çıkmak ve bunlarla ilgili bozuklukları zamanında yetkililere bildirmemek ya da yanlış bilgi vermek"},
-  "43": {k:"İhmal halinde görev aksatmak",c:["2G","3G","4G","İ.Ç.",""],m:"A) İhmal halinde  B) Ağır ihmal halinde: 3G 4G İ.Ç.  C) Kasıt halinde: İ.Ç."},
+  "42": {k:"Bozuklukları zamanında bildirmemek",c:["i","1G","2G","3G",""],m:"Araç ve gereçleri kontrol etmeden göreve çıkmak ve bozuklukları zamanında yetkililere bildirmemek"},
+  "43": {k:"İhmal halinde görev aksatmak",c:["2G","3G","4G","İ.Ç.",""],m:"A) İhmal halinde  B) Ağır ihmal: 3G 4G İ.Ç.  C) Kasıt: İ.Ç."},
   "44": {k:"İçkili araç kullanmak",c:["İ.Ç.","","","",""],m:"İçkili araç kullanmak"},
   "45": {k:"Araç ve gereçleri görev dışında kullanmak",c:["4G","İ.Ç.","","",""],m:"İş yerine ait araç ve gereçleri görev dışındaki işlerde kullanmak"},
   "46": {k:"Amir durumunda özel işlerde işçi kullanmak",c:["5G","6G","İ.Ç.","",""],m:"Amir durumunda olup çalıştığı işçileri özel işlerde kullanmak"},
   "47": {k:"Yetki dışında iş yapmak",c:["i","2G","4G","6G","İ.Ç."],m:"Kendisine verilen yetki dışında iş yapmak"},
   "48": {k:"Kasten yanlış bilgi vermek/işi aksatmak",c:["3G","6G","İ.Ç.","",""],m:"Görevi ile ilgili kasten yanlış bilgi vermek, işi aksatmak"},
   "49": {k:"Hasta değilken hasta gibi iş aksatmak",c:["1G","2G","3G","İ.Ç.",""],m:"Hasta olmadığı halde kendisini hasta gibi göstererek işi aksatmak"},
-  "50": {k:"Sınavda kopya çekmek/yardım almak",c:["3G","İ.Ç.","","",""],m:"A) Sınav sırasında kopya çekmek, yardım almak  B) Soru çalmak, sınav kağıdı ve tutanaklarında değişiklik yapmak: İ.Ç."},
+  "50": {k:"Sınavda kopya çekmek/yardım almak",c:["3G","İ.Ç.","","",""],m:"Sınav sırasında kopya çekmek, yardım almak"},
   "51": {k:"Yapmadığı görevi yapmış gibi göstermek",c:["2G","4G","6G","İ.Ç.",""],m:"Verilen görevi yapmadığı halde yapmış gibi göstermek"},
   "52": {k:"Sahte belge düzenlemek/belgede değişiklik",c:["İ.Ç.","","","",""],m:"Sahte belge düzenlemek, belgede değişiklik yapmak"},
-  "53": {k:"Gizli sırları açıklamak",c:["İ.Ç.","","","",""],m:"Göreviyle ilgili gizli kalması gereken sırları kasten açıklamak ya da bu sırları açıklayarak davranışlarda bulunmak"},
+  "53": {k:"Gizli sırları açıklamak",c:["İ.Ç.","","","",""],m:"Göreviyle ilgili gizli kalması gereken sırları kasten açıklamak"},
   "54": {k:"Hırsızlığa teşebbüs veya hırsızlık",c:["İ.Ç.","","","",""],m:"Hırsızlığa teşebbüs ve ya hırsızlık yapmak"},
   "55": {k:"Rüşvet almak veya vermek",c:["İ.Ç.","","","",""],m:"Rüşvet almak ya da vermeye tam teşebbüs veya rüşvet almak ya da vermek"},
   "56": {k:"Başlamamış işçiyi başlamış gibi göstermek",c:["3G","İ.Ç.","","",""],m:"Göreve başlamayan işçiyi başlamış gibi göstermek"},
-  "57": {k:"Gelmemiş işçiyi gelmiş gibi göstermek",c:["3G","4G","İ.Ç.","",""],m:"Yerine imza atmak ya da kartını okutmak suretiyle işe gelmeyen işçiyi gelmiş gibi göstermek"},
+  "57": {k:"Gelmemiş işçiyi gelmiş gibi göstermek",c:["3G","4G","İ.Ç.","",""],m:"Yerine imza atmak suretiyle işe gelmeyen işçiyi gelmiş gibi göstermek"},
   "58": {k:"Propaganda yaparak faaliyette bulunmak",c:["4G","6G","İ.Ç.","",""],m:"İş yerinde işi dışında propaganda yapmak suretiyle faaliyette bulunmak"},
   "59": {k:"Günlük saç/sakal/bıyık traşı olmamak",c:["i","2G","4G","6G",""],m:"Günlük saç ve sakal / bıyık traşı olmamak"},
   "60": {k:"Telsizde duyarsız kalmak",c:["i","1G","2G","3G",""],m:"Telsizde duyarsız kalmak"},
   "61": {k:"Görev alanı dışında resmi kıyafet giymek",c:["i","2G","3G","",""],m:"Görev alanı dışında veya görev süresi dışında resmi kıyafet giymek"},
   "62": {k:"Cep telefonuyla uzun süre meşgul olmak",c:["1G","2G","3G","",""],m:"Cep telefonu ile makul süre üzerinde konuşmak veya meşgul olmak"},
-  "63": {k:"Kıyafet ve aksesuarları uygun giymemek",c:["i","1G","2G","3G",""],m:"Kendisine teslim edilen kıyafet ve diğer aksesuarları uygun giymemek, takmamak ve üzerinde bulundurmamak"},
+  "63": {k:"Kıyafet ve aksesuarları uygun giymemek",c:["i","1G","2G","3G",""],m:"Kendisine teslim edilen kıyafet ve diğer aksesuarları uygun giymemek, takmamak"},
   "64": {k:"Amir/şef olarak sevk ve idarede yetersizlik",c:["4G","6G","","",""],m:"Amir ve şef olarak çalışan personelin sevk ve idarede yetersizlik göstermesi"},
   "65": {k:"Malzemeleri kulübe dışında bulundurmamak",c:["i","1G","2G","",""],m:"Kulübede bulunması gereken malzemeleri mesai dışında kulübe dışında bırakmak"},
   "66": {k:"Nöbet talimatlarına uymamak",c:["i","2G","3G","4G",""],m:"Nöbet talimatlarına uymamak"},
-  "67": {k:"Sevk ve idarede yetersizlik (kadro düşürme)",c:["Kadro Düşürme","","","",""],m:"Koordinatör, Kontrol Amiri, Amir, Ekip Şefi, ÖGS olarak çalışan personelin sevk ve idarede yetersizlik göstermesi, görevini layıkıyla sürdürememesi ve vasıflarını kaybettiğinin tespit edilmesi"},
+  "67": {k:"Sevk ve idarede yetersizlik (kadro düşürme)",c:["Kadro Düşürme","","","",""],m:"Koordinatör, Kontrol Amiri, Amir, Ekip Şefi olarak çalışan personelin sevk ve idarede yetersizlik göstermesi"},
   "68": {k:"Nöbet defterine başkası yerine imza atmak",c:["2G","3G","İ.Ç.","",""],m:"Nöbet defteri, ceride defterine başkaları yerine imza atmak"},
   "69": {k:"Görev saatinde üniformayla uygunsuz hareket",c:["i","2G","4G","",""],m:"Görev saati veya istirahat saatinde resmi üniforma ile uygunsuz hareketlerde bulunmak"},
-  "70": {k:"İş arkadaşlarına/amirlere sataşmak/tehdit",c:["6G","İ.Ç.","","",""],m:"A) İş arkadaşlarına, amirlere, iş yeri sahiplerine veya aile üyelerine sataşmak, hakaret etmek, tehdit etmek\nB) Sıralı sicil amirine saygısız davranmak, itiraz veya serzenişte bulunmak, olayları bildirmemek: 2G 4G 6G İ.Ç."},
-  "71": {k:"Hiyerarşiyi aşarak şikâyet/talepte bulunmak",c:["1G","2G","4G","",""],m:"Sıralı sicil amierlerini veya iş hiyerarşisini aşarak şikayette bulunmak, görevi ile ilgili istek ve talepte bulunmak"},
-  "72": {k:"Yöneticiler hakkında yalan beyan/dedikodu",c:["4G","İ.Ç.","","",""],m:"Yönetici, sıralı sicil amirleri, iş arkadaşları hakkında yalan beyanda bulunmak, dedikodu yapmak, şaibeli sözler söylemek"},
+  "70": {k:"İş arkadaşlarına/amirlere sataşmak/tehdit",c:["6G","İ.Ç.","","",""],m:"İş arkadaşlarına, amirlere sataşmak, hakaret etmek, tehdit etmek"},
+  "71": {k:"Hiyerarşiyi aşarak şikâyet/talepte bulunmak",c:["1G","2G","4G","",""],m:"Sıralı sicil amirlerini aşarak şikayette bulunmak, görevi ile ilgili talepte bulunmak"},
+  "72": {k:"Yöneticiler hakkında yalan beyan/dedikodu",c:["4G","İ.Ç.","","",""],m:"Yönetici ve amirleri hakkında yalan beyanda bulunmak, dedikodu yapmak"},
   "73": {k:"Özel güvenlik kimlik kartını takmamak",c:["i","1G","2G","3G",""],m:"Özel güvenlik kimlik kartını takmamak"},
   "74": {k:"Silah devir tesliminde kurallara uymamak",c:["2G","4G","6G","",""],m:"Silah devir tesliminde kurallara uymamak"},
   "75": {k:"Silahın kontrolsüz ateş almasına sebebiyet",c:["4G","İ.Ç.","","",""],m:"Silahın kontrolsüz veya kazara ateş almasına sebebiyet vermek"},
-  "76": {k:"Görev talimatlarını yerine getirmemek",c:["1G","2G","4G","6G",""],m:"Görev hayvanı idarecisi olarak çalışan personelin, yöneticiler tarafından verilen yazılı veya görev talimatlarını yerine getirmemek, savsaklamak, eksik olarak yapmak"},
-  "77": {k:"İş güvenliğini tehlikeye düşürmek",c:["2G","4G","6G","",""],m:"İşçinin; iş yerinde yapmakla yükümlü bulunduğu görevi gereği gibi yapmamak kendi isteği ve davranışı ile görevli bulunduğu yerin konum ve hassasiyetini gözetmeksizin işin güvenliğini tehlikeye düşürmesi"},
-  "78": {k:"3. kişilere karşı iş yerini olumsuz etkilemek",c:["4G","6G","İ.Ç.","",""],m:"İş yeri sınırları içerisinde veya görev başında iken 3. kişilere karşı iş yerini olumsuz etkileyecek (hakaret, tehdit, cebir içeren nedenlerle) olaylara veya iş yerini zor duruma düşürecek sonuçlara sebebiyet vermek"},
-  "79": {k:"Belgelere zarar vermek/yırtmak/karalamak",c:["4G","6G","İ.Ç.","",""],m:"Kendisine sunulan belgeleri yırtmak, ilgisiz ve kötü niyetli olarak yazılar yazmak, karalamak v.b. suretiyle alınan belgelere zarar vermek"},
-  "80": {k:"İş Kanunu 18. ve 25. madde kapsamında fiiller",c:["İ.Ç.","","","",""],m:"İş kanununun 18. ve 25. maddeleri ile bu maddelere dayalı olarak verilmiş Yargıtay kararlarında gösterilen fesih nedenlerine ilişkin fiilleri işleyen personeller hakkında"},
+  "76": {k:"Görev talimatlarını yerine getirmemek",c:["1G","2G","4G","6G",""],m:"Görev hayvanı idarecisi olarak çalışan personelin yazılı veya görev talimatlarını yerine getirmemek"},
+  "77": {k:"İş güvenliğini tehlikeye düşürmek",c:["2G","4G","6G","",""],m:"İşçinin yapmakla yükümlü bulunduğu görevi gereği gibi yapmayarak iş güvenliğini tehlikeye düşürmesi"},
+  "78": {k:"3. kişilere karşı iş yerini olumsuz etkilemek",c:["4G","6G","İ.Ç.","",""],m:"İş yeri sınırları içerisinde 3. kişilere karşı iş yerini olumsuz etkileyecek olaylara sebebiyet vermek"},
+  "79": {k:"Belgelere zarar vermek/yırtmak/karalamak",c:["4G","6G","İ.Ç.","",""],m:"Kendisine sunulan belgeleri yırtmak, karalamak suretiyle zarar vermek"},
+  "80": {k:"İş Kanunu 18. ve 25. madde kapsamında fiiller",c:["İ.Ç.","","","",""],m:"İş kanununun 18. ve 25. maddeleri kapsamındaki fesih nedenlerine ilişkin fiilleri işlemek"},
   "81": {k:"Görev alanını (parkı) terk etmek",c:["2G","3G","4G","",""],m:"Görev alanını terk etmek (Park Terk)"},
-  "82": {k:"KVKK'ya aykırı video/resim çekip paylaşmak",c:["İ.Ç.","","","",""],m:"Kişisel verileri koruma kanunu maddelerine aykırı hareketlerde bulunmak (video ve resim çekmek) bunları saklamak sosyal medya hesaplarından paylaşmak, şahsi menfaat doğrultusunda kullanmak"},
+  "82": {k:"KVKK'ya aykırı video/resim çekip paylaşmak",c:["İ.Ç.","","","",""],m:"Kişisel verileri koruma kanunu maddelerine aykırı hareketlerde bulunmak"},
   "83": {k:"Şirket verilerini amirlerine iletmemek",c:["4G","İ.Ç.","","",""],m:"Şirkete ait verileri kendi himayesinde saklamak, zamanında sıralı amirlerine iletmemek"},
-  "84": {k:"Denetim dosyasında eksik evrak bulundurmak",c:["2G","4G","İ.Ç.","",""],m:"Kontrol Amiri, Amir, Ekip Şefi ve Özel Güvenlik Sorumlusu olarak görev yaptığı mahalde emniyet denetim dosyasında eksik evrak bulundurmak, ve kontrolünü sağlamamak (ceride defteri, nöbet defteri v.b.)"},
-  "85": {k:"İş arkadaşlarıyla çıkar/borç ilişkisi",c:["3G","4G","İ.Ç.","",""],m:"İş arkadaşları ile ast üst ilişkisini kullanarak çıkar elde etmeye yönelik hareket etmek v.b. davranışlarda bulunmak suretiyle işyeri düzenini bozacak şekle geldiği durumlar (para alışverişinde bulunmak borç alıp vermek)"},
-  "86": {k:"Mobing ve psikolojik baskı yapmak",c:["4G","İ.Ç.","","",""],m:"Kontrol Amiri, Amir, Ekip Şefi ve Özel Güvenlik Sorumlusu olarak görev yapan personelin, şirket yönetimi, güvenlik müdürleri, belediye yönetimi ve daire başkanlıkları ile alakalı (dedikodu, fitne, yalan beyanda bulunmak, iftira atmak v.b.) durumlarda bulunması halinde, ayrıca ÖGG personeli üzerinde bu gibi konular üzerinden baskı oluşturmak suretiyle mobing ve psikolojik baskı yapmak"},
-  "87A":{k:"Tabanca teçhizatının eksik bulunması (mermi/şarjör)",c:["1G","2G","3G","",""],m:"Tabanca ile görev yapılan mahallerde teçnizatının eksik bulunması (mermi, şarjör)"},
-  "87B":{k:"Tabancayı uygunsuz yerde unutmak/bırakmak",c:["4G","İ.Ç.","","",""],m:"Tabanca ile görev yapılan mahallerde, tabancasını (tuvalet, lavabo, mescit v.b.) gibi yerlerde unutması/bırakması"},
-  "87C":{k:"Zimmetteki tabancanın kaybolması",c:["İ.Ç.","","","",""],m:"Tabanca ile görev yapılan mahallerde kendisine zimmetli olan tabancanın kaybı"},
-  "88": {k:"Sicil amirine bildirmeden 3. şahısları almak",c:["i","2G","4G","6G",""],m:"Silah ile görev yapılan mahallerde iş sağlığı ve güvenliği zafiyeti oluşmaması adına, sicil amirlerine bildirmeden görev alanına ziyaret maksadı ile 3. şahısların alınması"},
-  "89": {k:"Arvento takip sistemini sökmek, hız limitörünü devre dışı bırakmak",c:["4G","5G","İ.Ç.","",""],m:"Şirkete ait araç ve gereçlerden Arvento takip sistemini sökmek, hız limitörünü devre dışı bırakmak"}
+  "84": {k:"Denetim dosyasında eksik evrak bulundurmak",c:["2G","4G","İ.Ç.","",""],m:"Emniyet denetim dosyasında eksik evrak bulundurmak ve kontrolünü sağlamamak"},
+  "85": {k:"İş arkadaşlarıyla çıkar/borç ilişkisi",c:["3G","4G","İ.Ç.","",""],m:"İş arkadaşları ile çıkar elde etmeye yönelik para alışverişinde bulunmak, borç alıp vermek"},
+  "86": {k:"Mobing ve psikolojik baskı yapmak",c:["4G","İ.Ç.","","",""],m:"Personel üzerinde baskı oluşturmak suretiyle mobing ve psikolojik baskı yapmak"},
+  "87A":{k:"Tabanca teçhizatının eksik bulunması",c:["1G","2G","3G","",""],m:"Tabanca ile görev yapılan mahallerde teçhizatının eksik bulunması (mermi, şarjör)"},
+  "87B":{k:"Tabancayı uygunsuz yerde unutmak/bırakmak",c:["4G","İ.Ç.","","",""],m:"Tabancasını uygunsuz yerlerde unutması/bırakması"},
+  "87C":{k:"Zimmetteki tabancanın kaybolması",c:["İ.Ç.","","","",""],m:"Kendisine zimmetli olan tabancanın kaybı"},
+  "88": {k:"Sicil amirine bildirmeden 3. şahısları almak",c:["i","2G","4G","6G",""],m:"Sicil amirlerine bildirmeden görev alanına 3. şahısların alınması"},
+  "89": {k:"Arvento takip sistemini sökmek, hız limitörünü devre dışı bırakmak",c:["4G","5G","İ.Ç.","",""],m:"Şirkete ait araçlardan Arvento takip sistemini sökmek, hız limitörünü devre dışı bırakmak"}
 };
 
 // ══════════════════════════════════════
-//  VARSAYILAN VERİ
+//  VARSAYILAN VERİ — HİYERARŞİ
+//  Yapı: [ { ad, bolgeler: [ { ad, parklar: [] } ] } ]
 // ══════════════════════════════════════
-const V_PARK=['Öveçler Vadisi Parkı','Dikmen Vadisi Parkı','Altınpark'];
+const V_MUDURLU = [
+  {
+    ad: "Çevre-1 Güvenlik Müdürlüğü",
+    bolgeler: [
+      { ad: "DİKMEN BÖLGESİ", parklar: ["Öveçler Vadisi Rekreasyon Alanı","Dikmen Vadisi Parkı"] },
+      { ad: "KIZILAY BÖLGESİ", parklar: ["Altınpark","Gençlik Parkı"] }
+    ]
+  }
+];
+
 const V_KIDEM=['Amir','Ekip Şefi','ÖGG','ÖGS'];
 const V_VARD={sabit:['08:00-18:00'],1:['08:00-20:00'],2:['20:00-08:00'],3:[],4:[]};
 
-let parklar=yk('tm_p',V_PARK);
-let kidemler=yk('tm_k',V_KIDEM);
-let vardiyalar=yk('tm_v',V_VARD);
-let secilenSablon=null;
-let secilenKez=null;
+let mudurluler = yk('tm_md', V_MUDURLU);
+let kidemler   = yk('tm_k',  V_KIDEM);
+let vardiyalar = yk('tm_v',  V_VARD);
+let secilenSablon = null;
+let secilenKez    = null;
 
-function yk(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
+function yk(k,d){try{const r=JSON.parse(localStorage.getItem(k));return r||d;}catch(e){return d;}}
 function kk(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 
 // ══════════════════════════════════════
@@ -476,19 +542,51 @@ function kk(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 document.addEventListener('DOMContentLoaded',()=>{
   const b=new Date();
   document.getElementById('tarih').value=b.toISOString().split('T')[0];
-  doldurPark(); doldurKidem(); renderSablonlar(); renderAyarlar(); renderCetvel();
+  // Saati otomatik doldur
+  const hh=String(b.getHours()).padStart(2,'0');
+  const mm=String(b.getMinutes()).padStart(2,'0');
+  document.getElementById('olaysaati').value=`${hh}:${mm}`;
+
+  doldurMudurlu(); doldurKidem(); renderSablonlar(); renderAyarlar(); renderCetvel();
   document.addEventListener('click',e=>{ if(!e.target.closest('.tur-wrap')) turKapat(); });
 });
 
 // ══════════════════════════════════════
-//  SELECT DOLDURMALAR
+//  HİYERARŞİK SELECT DOLDURMA
 // ══════════════════════════════════════
-function doldurPark(){
-  const s=document.getElementById('park');
+function doldurMudurlu(){
+  const s=document.getElementById('mudurlu');
   const v=s.value; s.innerHTML='<option value="">— Seçiniz —</option>';
-  parklar.forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;s.appendChild(o);});
-  s.value=v;
+  mudurluler.forEach((m,i)=>{
+    const o=document.createElement('option'); o.value=i; o.textContent=m.ad; s.appendChild(o);
+  });
+  if(v!=='') s.value=v;
+  mudurluDegis();
 }
+function mudurluDegis(){
+  const idx=document.getElementById('mudurlu').value;
+  const sb=document.getElementById('bolge');
+  sb.innerHTML='<option value="">— Seçiniz —</option>';
+  document.getElementById('park').innerHTML='<option value="">— Önce Bölge —</option>';
+  if(idx==='') return;
+  const bolge=mudurluler[idx]?.bolgeler||[];
+  bolge.forEach((b,i)=>{
+    const o=document.createElement('option'); o.value=i; o.textContent=b.ad; sb.appendChild(o);
+  });
+  bolgeDegis();
+}
+function bolgeDegis(){
+  const mi=document.getElementById('mudurlu').value;
+  const bi=document.getElementById('bolge').value;
+  const sp=document.getElementById('park');
+  sp.innerHTML='<option value="">— Seçiniz —</option>';
+  if(mi===''||bi==='') return;
+  const parklar=mudurluler[mi]?.bolgeler[bi]?.parklar||[];
+  parklar.forEach(p=>{
+    const o=document.createElement('option'); o.value=p; o.textContent=p; sp.appendChild(o);
+  });
+}
+
 function doldurKidem(){
   const s=document.getElementById('kidem');
   const v=s.value; s.innerHTML='<option value="">— Seçiniz —</option>';
@@ -524,8 +622,7 @@ function sablonSec(id){
   renderSablonlar();
   const fg=document.getElementById('fg-tur');
   const s=SABLONLAR.find(x=>x.id===id);
-  if(secilenSablon && s && s.id!=='disiplin'){
-    // Hızlı şablon seçildi — disiplin alanını gizle
+  if(secilenSablon && s && s.id!=='disiplin' && s.id!=='serbest'){
     fg.style.display='none';
     document.getElementById('form-baslik').textContent=s.ad.toUpperCase();
     document.getElementById('tur-no').value=s.turNo||'';
@@ -533,7 +630,7 @@ function sablonSec(id){
     document.getElementById('cpanel').style.display='none';
   } else {
     fg.style.display='block';
-    document.getElementById('form-baslik').textContent='YENİ TUTANAK';
+    document.getElementById('form-baslik').textContent=secilenSablon==='serbest'?'SERBEST TUTANAK':'YENİ TUTANAK';
     if(!secilenSablon){
       document.getElementById('tur-no').value='';
       document.getElementById('tur-ara').value='';
@@ -595,50 +692,101 @@ function kezSec(i,c,no){
 //  TUTANAK OLUŞTUR
 // ══════════════════════════════════════
 function olustur(){
-  const tarihVal=document.getElementById('tarih').value;
-  const park=document.getElementById('park').value;
-  const vtip=document.getElementById('vtip').value;
-  const vsaat=document.getElementById('vsaat').value;
-  const per=document.getElementById('personel').value.trim();
-  const kid=document.getElementById('kidem').value;
-  const turNo=document.getElementById('tur-no').value;
-  const aciklama=document.getElementById('aciklama').value.trim();
+  const tarihVal = document.getElementById('tarih').value;
+  const saatVal  = document.getElementById('olaysaati').value;
+  const mi       = document.getElementById('mudurlu').value;
+  const bi       = document.getElementById('bolge').value;
+  const park     = document.getElementById('park').value;
+  const konum    = document.getElementById('konum').value.trim();
+  const vtip     = document.getElementById('vtip').value;
+  const vsaat    = document.getElementById('vsaat').value;
+  const per      = document.getElementById('personel').value.trim();
+  const kid      = document.getElementById('kidem').value;
+  const turNo    = document.getElementById('tur-no').value;
+  const konuBas  = document.getElementById('konubaslik').value.trim();
+  const aciklama = document.getElementById('aciklama').value.trim();
 
-  if(!park||!vtip||!vsaat||!per||!kid){
-    toast('⚠️ Lütfen tüm zorunlu alanları doldurunuz!',false); return;
+  if(!park||!vtip||!vsaat){
+    toast('⚠️ Park, Vardiya ve Saat seçilmeli!',false); return;
   }
 
-  const [y,m,d]=tarihVal.split('-');
-  const t=`${d}.${m}.${y}`;
-  const vtipMetin=vtipMt(vtip);
+  const sablon = SABLONLAR.find(s=>s.id===secilenSablon);
+  const isSerbest = sablon && sablon.id==='serbest';
 
-  let htmlIcerik='';
-  const sablon=SABLONLAR.find(s=>s.id===secilenSablon);
+  if(!isSerbest && !per){
+    toast('⚠️ Personel adını girin!',false); return;
+  }
+  if(!isSerbest && !kid){
+    toast('⚠️ Kıdem/Unvan seçin!',false); return;
+  }
 
-  if(sablon && sablon.id!=='disiplin' && sablon.metin){
-    // HIZLI ŞABLON — Olay Yeri formatı
-    let metin=sablon.metin(t,park,vtip,vsaat,per,kid);
-    if(aciklama) metin+=`\n\n${aciklama}`;
-    htmlIcerik=`
-      <div class="oy-yer">Olay Yeri: ${park}</div>
-      <div class="oy-txt">${metin.replace(/\n/g,'<br>')}</div>`;
+  const [y,m,d] = tarihVal.split('-');
+  const t = `${d}.${m}.${y}`;
+  const vtipMetin = vtipMt(vtip);
+  const saatMetin = saatVal ? `Saat ${saatVal}'de ` : '';
+
+  const mudurluAd = mi!=='' ? mudurluler[mi]?.ad || '' : '';
+  const bolgeAd   = (mi!=='' && bi!=='') ? mudurluler[mi]?.bolgeler[bi]?.ad || '' : '';
+
+  // Başlık bloğu (önizleme için ortak)
+  const konuSatir = konuBas ? `<div class="konu-sat"><strong>Konu:</strong> ${konuBas}</div>` : '';
+
+  let headerHtml = '';
+  if(mudurluAd || bolgeAd || park){
+    headerHtml = `
+      <div class="tk">
+        ${mudurluAd?`<div class="ku">${mudurluAd}</div>`:''}
+        ${bolgeAd?`<div class="bolge-ad">${bolgeAd}</div>`:''}
+        ${park?`<div class="park-ad">${park}</div>`:''}
+      </div>
+      <hr class="thr1"><hr class="thr2">`;
+  }
+
+  let htmlIcerik = '';
+
+  if(isSerbest){
+    // SERBEST TUTANAK
+    const acMetin = aciklama || '(Açıklama girin)';
+    htmlIcerik = `
+      ${headerHtml}
+      <div class="tb2">T U T A N A K</div>
+      ${konuSatir}
+      <div class="txt">${acMetin.replace(/\n/g,'<br>')}</div>
+      <div class="bilgi-sat">${t}<br>Tutanağı Düzenleyen</div>`;
+
+  } else if(sablon && sablon.id!=='disiplin' && sablon.metin){
+    // HIZLI ŞABLON
+    const konumEk = konum ? ` ${konum}'nde` : '';
+    let metin = `${t} tarihi'nde ${vsaat} vardiyası'nda ${saatMetin}${park}${konumEk} yapılan rutin devriye ve kontrollerimizde `;
+    // Şablonun kendi metnini kullan ama ön kısmı bizim oluşturduğumuzla değiştir
+    const sablonMetin = sablon.metin(t,park,vtip,vsaat,per,kid);
+    // Şablondan sadece olayın kendisini al (tarih kısmını atlıyoruz çünkü daha zengin yazdık)
+    // Kendi ürettiğimiz giriş + şablon sonucu
+    metin = sablonMetin;
+    if(aciklama) metin += `\n\n${aciklama}`;
+
+    htmlIcerik = `
+      ${headerHtml}
+      <div class="tb2">T U T A N A K</div>
+      ${konuSatir}
+      <div class="txt">${metin.replace(/\n/g,'<br>')}</div>
+      <div class="bilgi-sat">${t}<br>Tutanağı Düzenleyen: ${kid} ${per}</div>`;
+
   } else if(turNo){
-    // DİSİPLİN CETVELİ — Resmi tutanak
-    const madde=CEZA[turNo];
-    const ilk=(madde?madde.m.split('\n')[0].replace(/^A\)\s*/,''):'');
-    let metin=`${t} Tarihinde ${park} Parkı ${vtipMetin} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in `;
-    metin+=ilk.charAt(0).toLowerCase()+ilk.slice(1);
-    if(!metin.endsWith('.')||metin.endsWith('mak')||metin.endsWith('mek'))
-      metin+=' tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.';
-    if(aciklama) metin+=`\n\n${aciklama}`;
-    metin+='\n\nGereğinin yapılmasını arz ederim.';
+    // DİSİPLİN CETVELİ
+    const madde = CEZA[turNo];
+    const ilk = (madde?madde.m.split('\n')[0].replace(/^A\)\s*/,''):'');
+    let metin = `${t} Tarihinde ${park} Parkı ${vtipMetin} ${vsaat} saatleri arasında görevli olan ${kid} ${per}'in `;
+    metin += ilk.charAt(0).toLowerCase()+ilk.slice(1);
+    if(!metin.trimEnd().endsWith('.')) metin += ' tespit edilmiş ve tutanak tarafımızca imza altına alınmıştır.';
+    if(aciklama) metin += `\n\n${aciklama}`;
+    metin += '\n\nGereğinin yapılmasını arz ederim.';
 
-    const kezHtml=secilenKez?`<div style="margin-bottom:12px;padding:7px 11px;background:#fff3e0;border:1px solid #ffc966;border-radius:6px;font-size:12px;font-family:'Segoe UI',sans-serif;"><strong>📊 ${secilenKez.idx}. Kez — Ceza: ${secilenKez.ceza}</strong></div>`:'';
-    const maddeRef=madde?`Md.${turNo} — ${madde.k}`:turNo;
+    const kezHtml = secilenKez?`<div style="margin-bottom:12px;padding:7px 11px;background:#fff3e0;border:1px solid #ffc966;border-radius:6px;font-size:12px;"><strong>📊 ${secilenKez.idx}. Kez — Ceza: ${secilenKez.ceza}</strong></div>`:'';
+    const maddeRef = madde?`Md.${turNo} — ${madde.k}`:turNo;
 
-    htmlIcerik=`
-      <div class="tk"><div class="ku">GÜVENLİK HİZMETLERİ</div><div class="ka">Tutanak Belgesi</div></div>
-      <hr class="thr1"><hr class="thr2">
+    htmlIcerik = `
+      ${headerHtml}
       <div class="tb2">T U T A N A K</div>
       <div class="tm">
         <div><span>Tarih: </span><strong>${t}</strong></div>
@@ -659,29 +807,29 @@ function olustur(){
 }
 
 // ══════════════════════════════════════
-//  PDF
+//  PDF / YAZDIR
 // ══════════════════════════════════════
 function pdfAl(){
   const el=document.getElementById('preview');
   if(!el||!el.innerHTML.trim()){toast('Önce tutanak oluşturun!',false);return;}
-  // Yazdır diyaloğu aç - APK'da da çalışır
   const w=window.open('','_blank','width=800,height=600');
   if(!w){window.print();return;}
   w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
     <title>Tutanak</title>
     <style>
       body{font-family:'Times New Roman',Georgia,serif;color:#111;line-height:1.9;padding:20mm 15mm;margin:0;}
-      .oy-yer{font-size:13px;font-weight:700;margin-bottom:14px;}
-      .oy-txt{font-size:14px;line-height:2.1;text-align:justify;}
-      .tk{text-align:center;margin-bottom:6px;}
+      .tk{text-align:center;margin-bottom:4px;}
       .ku{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
       .ka{font-size:11px;color:#555;margin-top:2px;}
+      .bolge-ad{font-size:12px;font-weight:700;color:#222;margin-top:3px;letter-spacing:.5px;}
+      .park-ad{font-size:12px;color:#333;margin-top:1px;}
       .thr1{border:none;border-top:2px solid #1a2744;margin:9px 0 3px;}
       .thr2{border:none;border-top:1px solid #aaa;margin:3px 0 14px;}
-      .tb2{text-align:center;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;color:#1a2744;}
+      .tb2{text-align:center;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;color:#1a2744;}
+      .konu-sat{text-align:center;font-size:13px;margin-bottom:16px;color:#222;}
       .tm{display:flex;justify-content:space-between;margin-bottom:16px;font-size:13px;}
-      .txt{font-size:14px;text-align:justify;margin-bottom:24px;line-height:2.05;}
-      .timz{margin-top:28px;font-size:13px;text-align:right;color:#444;font-style:italic;}
+      .txt{font-size:14px;text-align:justify;margin-bottom:24px;line-height:2.1;}
+      .timz,.bilgi-sat{margin-top:28px;font-size:13px;text-align:right;color:#444;font-style:italic;}
       @media print{@page{margin:15mm;}}
     </style>
   </head><body>${el.innerHTML}</body></html>`);
@@ -717,7 +865,6 @@ function renderCetvel(filtre){
 function cetvelAra(q){ renderCetvel(q); }
 function cetvelSec(no){
   gTab('olustur',document.querySelector('.tb'));
-  // Disiplin şablonunu aktifleştir
   sablonSec('disiplin');
   turSec(no);
   document.getElementById('tab-olustur').scrollIntoView({behavior:'smooth'});
@@ -725,10 +872,10 @@ function cetvelSec(no){
 }
 
 // ══════════════════════════════════════
-//  AYARLAR
+//  AYARLAR — HİYERARŞİK BÖLGE YÖNETİMİ
 // ══════════════════════════════════════
 function renderAyarlar(){
-  renderTags('park-tags',parklar,'park');
+  renderMudurluBlok();
   renderTags('kidem-tags',kidemler,'kidem');
   const b=document.getElementById('vard-ayar-bolum');
   const tipler=[['sabit','Sabit Vardiya'],['1','1. Vardiya'],['2','2. Vardiya'],['3','3. Vardiya'],['4','4. Vardiya']];
@@ -737,20 +884,82 @@ function renderAyarlar(){
       <h3>🕐 Vardiya Saatleri — ${ad}</h3>
       <div class="tags" id="vt-${tip}"></div>
       <div class="add-row">
-        <input type="text" id="yv-${tip}" placeholder="Örn: 08:00-18:00">
+        <input type="text" id="yv-${tip}" placeholder="Örn: 08:00-18:00" inputmode="text">
         <button class="btn-add" onclick="vardEkle('${tip}')">+ Ekle</button>
       </div>
     </div>`).join('');
   tipler.forEach(([tip])=>renderTags(`vt-${tip}`,vardiyalar[tip]||[],`vard_${tip}`));
 }
+
+function renderMudurluBlok(){
+  const el=document.getElementById('mudurlu-blok');
+  el.innerHTML=mudurluler.map((md,mi)=>`
+    <div class="bolge-kart">
+      <div class="bk-baslik">
+        <span>🏢 ${md.ad}</span>
+        <button onclick="mudurluSil(${mi})" style="background:none;border:none;cursor:pointer;color:var(--red);font-size:16px;font-weight:700;">×</button>
+      </div>
+      ${md.bolgeler.map((bg,bi)=>`
+        <div style="margin-bottom:12px;padding:10px;background:#f0f3ff;border-radius:8px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;">
+            <span style="font-size:12px;font-weight:700;color:var(--navy);">📍 ${bg.ad}</span>
+            <button onclick="bolgeSil(${mi},${bi})" style="background:none;border:none;cursor:pointer;color:var(--red);font-size:14px;font-weight:700;">×</button>
+          </div>
+          <div class="bk-park-list">
+            ${bg.parklar.map((p,pi)=>`<span class="tag">${p}<button class="tdel" onclick="parkSil(${mi},${bi},${pi})">×</button></span>`).join('')}
+          </div>
+          <div class="bk-park-ekle">
+            <input type="text" id="yp-${mi}-${bi}" placeholder="Yeni park/alan..." inputmode="text">
+            <button class="btn-add" onclick="parkEkle(${mi},${bi})">+ Park</button>
+          </div>
+        </div>`).join('')}
+      <div class="add-row" style="margin-top:8px;">
+        <input type="text" id="yb-${mi}" placeholder="Yeni bölge..." inputmode="text">
+        <button class="btn-add" onclick="bolgeEkle(${mi})">+ Bölge</button>
+      </div>
+    </div>`).join('');
+}
+
+function mudurluEkle(){
+  const v=document.getElementById('yeni-mudurlu').value.trim(); if(!v) return;
+  mudurluler.push({ad:v,bolgeler:[]});
+  kk('tm_md',mudurluler);
+  document.getElementById('yeni-mudurlu').value='';
+  renderMudurluBlok(); doldurMudurlu();
+  toast('✅ Müdürlük eklendi',true);
+}
+function mudurluSil(mi){
+  mudurluler.splice(mi,1); kk('tm_md',mudurluler);
+  renderMudurluBlok(); doldurMudurlu(); toast('Silindi',false);
+}
+function bolgeEkle(mi){
+  const v=document.getElementById(`yb-${mi}`).value.trim(); if(!v) return;
+  mudurluler[mi].bolgeler.push({ad:v,parklar:[]});
+  kk('tm_md',mudurluler);
+  renderMudurluBlok(); doldurMudurlu(); toast('✅ Bölge eklendi',true);
+}
+function bolgeSil(mi,bi){
+  mudurluler[mi].bolgeler.splice(bi,1); kk('tm_md',mudurluler);
+  renderMudurluBlok(); doldurMudurlu(); toast('Silindi',false);
+}
+function parkEkle(mi,bi){
+  const v=document.getElementById(`yp-${mi}-${bi}`).value.trim(); if(!v) return;
+  mudurluler[mi].bolgeler[bi].parklar.push(v);
+  kk('tm_md',mudurluler);
+  renderMudurluBlok(); doldurMudurlu(); toast('✅ Park eklendi',true);
+}
+function parkSil(mi,bi,pi){
+  mudurluler[mi].bolgeler[bi].parklar.splice(pi,1); kk('tm_md',mudurluler);
+  renderMudurluBlok(); doldurMudurlu(); toast('Silindi',false);
+}
+
 function renderTags(cid,liste,tip){
   const el=document.getElementById(cid); if(!el) return;
   el.innerHTML=liste.map((item,i)=>`
     <span class="tag">${item}<button class="tdel" onclick="tagSil('${tip}',${i})">×</button></span>`).join('');
 }
 function tagSil(tip,idx){
-  if(tip==='park'){parklar.splice(idx,1);kk('tm_p',parklar);doldurPark();}
-  else if(tip==='kidem'){kidemler.splice(idx,1);kk('tm_k',kidemler);doldurKidem();}
+  if(tip==='kidem'){kidemler.splice(idx,1);kk('tm_k',kidemler);doldurKidem();}
   else if(tip.startsWith('vard_')){
     const t=tip.replace('vard_','');
     if(!vardiyalar[t]) return;
@@ -759,10 +968,7 @@ function tagSil(tip,idx){
   renderAyarlar(); toast('Silindi',false);
 }
 function ekle(tip){
-  if(tip==='park'){
-    const v=document.getElementById('yp').value.trim(); if(!v) return;
-    parklar.push(v);kk('tm_p',parklar);document.getElementById('yp').value='';doldurPark();
-  } else {
+  if(tip==='kidem'){
     const v=document.getElementById('yk').value.trim(); if(!v) return;
     kidemler.push(v);kk('tm_k',kidemler);document.getElementById('yk').value='';doldurKidem();
   }
@@ -787,9 +993,11 @@ function gTab(tab,el){
   else document.querySelector(`.tb[onclick*="${tab}"]`)?.classList.add('on');
 }
 function temizle(){
-  ['park','vtip','vsaat','kidem'].forEach(id=>document.getElementById(id).value='');
+  ['mudurlu','bolge','park','vtip','vsaat','kidem'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('personel').value='';
+  document.getElementById('konum').value='';
   document.getElementById('aciklama').value='';
+  document.getElementById('konubaslik').value='';
   document.getElementById('tur-ara').value='';
   document.getElementById('tur-no').value='';
   document.getElementById('cpanel').style.display='none';
@@ -798,6 +1006,11 @@ function temizle(){
   document.getElementById('form-baslik').textContent='YENİ TUTANAK';
   secilenSablon=null; secilenKez=null; window._pdfData=null;
   renderSablonlar();
+  // Saati sıfırla
+  const b=new Date();
+  const hh=String(b.getHours()).padStart(2,'0');
+  const mm=String(b.getMinutes()).padStart(2,'0');
+  document.getElementById('olaysaati').value=`${hh}:${mm}`;
 }
 function toast(msg,ok){
   const el=document.getElementById('toast');
